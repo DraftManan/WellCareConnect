@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python3 wellcare/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: 34.142.190.101  
+      DB_PORT: 5432         
+      DB_USER: postgres
+      DB_PASSWORD: password
+      DB_NAME: wellcare
+
+
+
